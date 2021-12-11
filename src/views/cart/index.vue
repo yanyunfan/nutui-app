@@ -1,5 +1,7 @@
 <template>
-  <h2>购物车</h2>
+  <div>
+    <nut-navbar  @on-click-back="back" title="购物车"></nut-navbar>
+  </div>
 </template>
 
 <script>

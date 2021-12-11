@@ -1,6 +1,12 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/login/'),
+    meta: { requiresAuth: false } // 添加额外的自定义数据
+  },
   { // 一级路由渲染到根组件中的 router-view
     path: '/',
     component: () => import('@/views/layout/'),

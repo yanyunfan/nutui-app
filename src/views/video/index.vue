@@ -1,6 +1,8 @@
 <template>
-  <h2>视频</h2>
-  <nut-video :source="source" :options="options"></nut-video>
+  <div>
+    <nut-navbar  @on-click-back="back" title="视频"></nut-navbar>
+    <nut-video :source="source" :options="options"></nut-video>
+  </div>
 </template>
 
 <script>

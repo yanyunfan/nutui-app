@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h2>分类</h2>
+    <nut-navbar  @on-click-back="back" title="分类"></nut-navbar>
   </div>
 </template>
 
 <script>
 export default {
-  name: "CategoryIndex"
+  name: 'CategoryIndex'
 }
 </script>
 
