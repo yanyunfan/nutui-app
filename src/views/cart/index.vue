@@ -4,12 +4,9 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'CartIndex'
-}
+<script lang="ts">
+import { defineComponent} from "vue";
+export default defineComponent ({
+  name: 'Cart'
+});
 </script>
-
-<style scoped>
-
-</style>

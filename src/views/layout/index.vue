@@ -16,10 +16,9 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'LayoutIndex'
-}
+<script lang="ts">
+import { defineComponent} from "vue";
+export default defineComponent ({
+  name: 'Layout'
+});
 </script>
-
-<style scoped lang="less"></style>

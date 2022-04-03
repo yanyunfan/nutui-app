@@ -17,7 +17,7 @@
     </nut-searchbar>
 
     <!--轮播-->
-    <nut-swiper :init-page="3" :pagination-visible="true" pagination-color="#426543" auto-play="3000" height="150">
+    <nut-swiper :init-page="page" :pagination-visible="true" pagination-color="#426543" auto-play="3000">
       <nut-swiper-item>
         <img src="https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg" alt=""/>
       </nut-swiper-item>
@@ -34,31 +34,48 @@
       text="华为新品即将上市，活动期间0元预约可参与抽奖，赢HUAWEI WATCH等好礼，更多产品信息请持续关注！"
     ></nut-noticebar>
 
-    <!--弹幕-->
-    <nut-cell>
-      <nut-barrage ref="danmu" :danmu="list" :speeds="5000"></nut-barrage>
-    </nut-cell>
+    <nut-audio
+      url="//storage.360buyimg.com/jdcdkh/SMB/VCG231024564.wav"
+      :muted="muted"
+      :autoplay="autoplay"
+      :loop="true"
+      type="icon"
+    ></nut-audio>
   </div>
 </template>
 
-<script>
-import { ref } from 'vue'
-
-export default {
-  name: 'HomeIndex',
+<script lang="ts">
+import { reactive, toRefs, defineComponent } from 'vue';
+export default defineComponent ({
+  name: 'Home',
   setup() {
-    const list = ref(['画美不看', '不明觉厉', '喜大普奔', '男默女泪', '累觉不爱', '爷青结-'])
-    return {
-      list
-    }
+    const state = reactive({
+      page: 2,
+    });
+
+    const data = reactive({
+      muted: false,
+      autoplay: false
+    });
+
+    return { ...toRefs(state), ...toRefs(data)};
   }
-}
+});
 </script>
 
-<style scoped>
+<style lang="less">
 .nut-cell,
 .nut-barrage {
   padding: 20px 0;
   height: 150px;
 }
+.nut-swiper-item {
+  line-height: 150px;
+  width: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
 </style>
+

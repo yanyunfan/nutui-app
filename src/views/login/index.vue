@@ -22,11 +22,11 @@
   </div>
 </template>
 
-<script>
-import { reactive, getCurrentInstance } from 'vue'
+<script lang="ts">
+import {reactive, getCurrentInstance, defineComponent} from 'vue'
 
-export default {
-  name: 'LoginIndex',
+export default defineComponent ({
+  name: 'Login',
   setup() {
     const { proxy } = getCurrentInstance()
     const state = reactive({
@@ -56,9 +56,5 @@ export default {
       methods
     }
   }
-}
+});
 </script>
-
-<style scoped>
-
-</style>
